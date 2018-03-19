@@ -12,3 +12,12 @@
 C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\bin\Debug\Y2Y Comparison.exe.config
 C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y Comparison.exe
 C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y Comparison.pdb
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\bin\Debug\Resources\Database.mdb
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\bin\Debug\Resources\ExcelFormat.xls
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\bin\Debug\Y2Y Comparison.exe
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\bin\Debug\Y2Y Comparison.pdb
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y Comparison.csprojResolveAssemblyReference.cache
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y_Comparison.Form1.resources
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y_Comparison.Properties.Resources.resources
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y Comparison.csproj.GenerateResource.Cache
+C:\Users\hackm\Documents\GitHub\Y2Y Comparison\Y2Y Comparison\obj\Debug\Y2Y Comparison.csproj.CoreCompileInputs.cache

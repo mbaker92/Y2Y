@@ -228,17 +228,25 @@ namespace Y2Y_Comparison
 
             // Prompt user for folder to save Excel
             OutputExcel();
+
+
         }
 
         /* Function: OutputExcel()
-         * Description: Prompt user for a directory to store new excel file and copy it to the directory with overwrite on.
+         * Description: Prompt user for a directory to store new excel file and copy it to the directory.
+         *              If the File Already Exists, rename the oldfile with the time appended to the end.
          */
 
         private void OutputExcel()
         {
-            if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
+                if (System.IO.File.Exists(folderBrowserDialog1.SelectedPath + @"\Y2YOutput.xls"))
+                {
+                    System.IO.File.Copy(folderBrowserDialog1.SelectedPath + @"\Y2YOutput.xls", folderBrowserDialog1.SelectedPath + @"\Y2YOutput" + DateTime.Now.ToString("hhmmss") + ".xls");
+                }
                 System.IO.File.Copy(Distress.ExcelFile, folderBrowserDialog1.SelectedPath + @"\Y2YOutput.xls", true);
+
             }
         }
 
@@ -252,6 +260,13 @@ namespace Y2Y_Comparison
             PreviousSelected = false;
             PrevText.Text = "";
             CurrentText.Text = "";
+
+            // Reset the Excel File
+            Distress.CopyExcelFileBack();
+
+            // Reset Database
+            Distress.DropTables();
+            Distress.CreateDatabase();
         }
     }
 }

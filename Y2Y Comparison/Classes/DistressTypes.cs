@@ -19,7 +19,8 @@ namespace Y2Y_Comparison.Classes
     {
         // Declare Variables used
         private static string RequiredDatabase;
-        public  string ExcelFile;
+        public string ExcelFile;
+        public string excelFile2;
         public OleDbConnection myConnection;
         public OleDbConnection ExcelConnection;
 
@@ -38,9 +39,57 @@ namespace Y2Y_Comparison.Classes
             myConnection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + RequiredDatabase);
             ExcelConnection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0; Data source=" + ExcelFile + "; Extended Properties=Excel 8.0;");
 
+            // Clear Database
+            DropTables();
+
             // Create the Tables in the new database.
             CreateDatabase();
 
+            //Create a copy of the Excel file to have a fresh start next time
+            CopyExcelFile();
+        }
+
+        /* Function: CopyExcelFile()
+         * Description: Copy the excel file to a new name so that it can be copied back at the end for a fresh start.
+         */
+
+        private void CopyExcelFile()
+        {
+            excelFile2 = Environment.CurrentDirectory + @"\Resources\ExcelFormat2.xls";
+            System.IO.File.Copy(ExcelFile, excelFile2, true);
+        }
+        /* Function: CopyExcelFileBack()
+         * Description: Overwrite original excel with copy and delete the copy for a fresh start.
+         */
+        public void CopyExcelFileBack()
+        {
+            System.IO.File.Copy(excelFile2, ExcelFile, true);
+            
+        }
+
+        /* Function: DropTables()
+         * Description: Will clear the database of the ACP, CRCP, and JRCP tables if they exist
+         *              Uses a try catch block to clear the database since OLEDB does not recognize
+         *              the SQL statement IF EXISTS. If there is an error clearing it the try catch
+         *              will just ignore the error and allow the program to continue.
+         */
+
+        public void DropTables()
+        {
+            myConnection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = myConnection;
+            try
+            {
+                command.CommandText = "DROP TABLE ACP , CRCP, JRCP";
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            myConnection.Close();
         }
 
 
