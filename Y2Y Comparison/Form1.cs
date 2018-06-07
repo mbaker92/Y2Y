@@ -6,7 +6,7 @@
  * Description: This file controls the form used in this program. The form asks for the Current and
  *              the Previous FWG databases. It will then take the required information and create
  *              a database with the needed values. Then an Excel file is created and it is saved to
- *              the destination choosen by the user.
+ *              the destination chosen by the user.
  */
 
 using System;
